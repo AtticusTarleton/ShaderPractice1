@@ -127,7 +127,10 @@ void Engine::update() {
 
     // TODO: Make updates here! (Code is in README)
     // Put this code in update in engine.cpp
-    float scale = (sin(currentFrame) + 1.0) / 2.0;  // Varies between 0 and 1
+    float scale = (sin(currentFrame) + 1.0) / 2.0 + .01;  // Varies between 0 and 1
+    scale = std::round(scale * 10) / 10.0; // this does super cool stuff to my code
+    // scale = std::round(scale * 30000) / 30000.0; //makes the shading smoother past the initial go
+
     shapes[0]->setSize(vec2(300 * scale, 300 * scale));
     // Put this code in update in engine.cpp
     // shapes[0]->rotateShape(90.0f, 0.01);
